@@ -1,0 +1,16 @@
+1. top
+- get the process pid
+- e.g., pid: 1000
+
+2. top -H -p 1000
+- get the threads
+- e.g., thread pid: 1001 & 1002
+
+3. convert thread pid 1001 to hex code
+- cmd: printf '0x%x\n' 1001
+- e.g., 1001 -> 0x3e9
+
+4. jstack
+- check application 20 lines to debug
+- cmd: jstack 1000 | grep 0x3e9 -A 20
+- now we should locate the controller file: line xxx, and debug
