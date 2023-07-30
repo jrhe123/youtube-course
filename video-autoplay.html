@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<video src="./test.mp4"></video>
+		<div class="modal">
+			<button class="btn">play</button>
+		</div>
+	</body>
+	<script>
+		const video = document.querySelector("video");
+		const modal = document.querySelector(".modal");
+		const btn = document.querySelector(".btn");
+		function play() {
+			video.muted = true;
+			video.play();
+
+			const ctx = new AudioContext();
+			const canAutoPlay = ctx.state === "running";
+			ctx.close();
+
+			if (canAutoPlay) {
+				video.muted = false;
+				modal.style.display = "none";
+				btn.removeEventListener("click", play);
+			} else {
+				modal.style.display = "flex";
+				btn.addEventListener("click", play);
+			}
+		}
+
+		play();
+	</script>
+</html>
