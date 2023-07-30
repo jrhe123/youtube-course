@@ -14,3 +14,13 @@
 - check application 20 lines to debug
 - cmd: jstack 1000 | grep 0x3e9 -A 20
 - now we should locate the controller file: line xxx, and debug
+
+```
+@GetMapping("/get")
+public String getUser() {
+  while(isWhile) {
+    ;
+  }
+  return "success";
+}
+```
