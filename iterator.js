@@ -3,8 +3,8 @@ Object.prototype[Symbol.iterator] = function() {
 }
 
 var [a, b] = {
-	a: 3,
-  b: 4
+  a: 3,
+  b: 4,
 }
 
 console.log(a, b)
