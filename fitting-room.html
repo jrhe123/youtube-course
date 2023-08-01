@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.card {
+				width: 600px;
+				height: 799px;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 12px;
+			}
+			.source {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.dress {
+				position: absolute;
+				inset: 0;
+				/* background: url("./model-dress.png") 50% 50% / cover; */
+				background: #add8e6;
+				--mask: url("./model-dress.png") 50% 50% / cover;
+				mask: var(--mask);
+				-webkit-mask: var(--mask);
+				mix-blend-mode: multiply;
+			}
+		</style>
+	</head>
+	<body>
+		<label for="colorpicker">Color Picker:</label>
+		<input type="color" id="colorpicker" value="#add8e6" />
+
+		<div class="card">
+			<img src="./model.jpg" alt="model" class="source" />
+			<div class="dress"></div>
+		</div>
+	</body>
+
+	<script>
+		const colorpicker = document.querySelector("#colorpicker");
+		const dress = document.querySelector(".dress");
+
+		colorpicker.addEventListener("change", (event) => {
+			dress.style.setProperty("background", event.target.value);
+		});
+	</script>
+</html>
