@@ -3,6 +3,7 @@
 ### Funny questions
 - Java
 - Python
+- Html & Css
 - Javascript
 - Bash
 - Php
