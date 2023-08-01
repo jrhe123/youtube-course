@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				width: 100vw;
+				height: 100vh;
+			}
+			.footer {
+				height: 500px;
+				width: 100%;
+				background-color: tomato;
+				position: relative;
+			}
+			.bubbles {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 1em;
+				background: lightblue;
+			}
+			.bubble {
+				position: absolute;
+				--x: 100px;
+				--s: 50px;
+				--d: 2s;
+				border-radius: 50%;
+				background: inherit;
+				width: var(--s);
+				height: var(--s);
+				left: var(--x);
+				top: 30px;
+				animation: bubbling var(--d) ease-in forwards;
+			}
+			@keyframes bubbling {
+				75% {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(0);
+					top: -200px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="footer">
+			<div class="bubbles">
+				<div class="bubble"></div>
+			</div>
+		</div>
+	</body>
+
+	<script></script>
+</html>
