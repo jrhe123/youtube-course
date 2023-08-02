@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				background-color: black;
+			}
+			h1 {
+				font-size: 80px;
+				padding-top: 1em;
+				text-align: center;
+				text-transform: uppercase;
+				color: white;
+			}
+			.overlap {
+				font-family: monospace;
+				letter-spacing: -10px;
+				display: flex;
+				flex-wrap: wrap;
+				transform-style: preserve-3d;
+				justify-content: center;
+			}
+			.overlap span {
+				text-shadow: 10px 0 10px #000;
+				transform: perspective(500px) rotateY(-50deg);
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="overlap">Hello World</h1>
+	</body>
+	<script>
+		const overlap = document.querySelector(".overlap");
+		overlap.innerHTML = overlap.textContent
+			.split("")
+			.map((c) => `<span>${c}</span>`)
+			.join("");
+	</script>
+</html>
